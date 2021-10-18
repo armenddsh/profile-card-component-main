@@ -1,3 +1,10 @@
+:root {
+  --dark-cyan: sl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayvish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -25,6 +32,10 @@ ol[role='list'] {
   list-style: none;
 }
 
+html {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
 /* Set core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
@@ -35,6 +46,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-size: 62.5%;
 }
 
 /* A elements that don't have a class get default styles */
@@ -75,3 +87,47 @@ select {
 
 /* CSS */
 
+.main {
+  background: #19A1AE;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#bg-top {
+  position: absolute;
+  top: -25%;
+  left: -50%;
+}
+
+#bg-card {
+  position: absolute;
+  width: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+#bg-bottom {
+  position: absolute;
+  bottom: -25%;
+  right: -50%;
+}
+
+.card {
+  background: #FFF;
+  width: 90%;
+  height: 50%;
+  border-radius: 15px;
+  position: relative;
+}
+
+.logo > img {
+  position: absolute;
+  top: 27%;
+  left: 36%;
+  border-radius: 50%;
+  border: 5px solid white;
+}
