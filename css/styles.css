@@ -10,82 +10,17 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
   margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
+  padding: 0;
 }
 
 html {
   font-family: 'Kumbh Sans', sans-serif;
 }
 
-/* Set core root defaults */
-html:focus-within {
-  scroll-behavior: smooth;
-}
-
-/* Set core body defaults */
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  font-size: 62.5%;
+  overflow: hidden;
 }
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* CSS */
 
 .main {
   background: #19A1AE;
@@ -97,37 +32,106 @@ select {
   overflow: hidden;
 }
 
+.bg {
+  position: relative;
+}
+
 #bg-top {
   position: absolute;
-  top: -25%;
-  left: -50%;
+  top: -50rem;
+  left: -50rem;
+}
+
+#bg-bottom {
+  position: absolute;
+  top: 0px;
+  left: 25rem;
 }
 
 #bg-card {
-  position: absolute;
   width: 100%;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
 
-#bg-bottom {
-  position: absolute;
-  bottom: -25%;
-  right: -50%;
+.person {
+  display: flex;
+  justify-content: center;
+}
+
+#img-person {
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 5px solid white;
 }
 
 .card {
   background: #FFF;
-  width: 90%;
-  height: 50%;
+  max-width: 32.6rem;
+  max-height: 37.4rem;
   border-radius: 15px;
-  position: relative;
+  z-index: 1;
+  margin: 2rem;
 }
 
-.logo > img {
-  position: absolute;
-  top: 27%;
-  left: 36%;
-  border-radius: 50%;
-  border: 5px solid white;
+.name, .city {
+  display: flex;
+  justify-content: center;
+}
+
+.name > h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2E3349;
+}
+
+.name > span,
+.city > span  {
+  font-size: 1.8rem;
+  font-weight: normal;
+  margin-left: 0.5rem;
+  color: #6B7082;
+}
+
+.divider {
+  border-top: 1px solid #E8E9EC;
+  margin-top: 3.6rem;
+}
+
+.stats-h {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stats-v {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.stat > h2 {
+  color: #2E3349;
+  font-size: 1.8rem;
+}
+
+.stat > span {
+  font-size: 1rem;
+  color: #6B7082;
+}
+
+@media only screen and ( min-width: 1000px ) {
+  main .card {
+    max-width: 35rem;
+    max-height: 37.4rem;
+  } 
 }
